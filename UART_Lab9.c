@@ -140,6 +140,7 @@ void UARTIntHandler(void)
 				UARTCharPut(UART0_BASE, 'u');
 				UARTCharPut(UART0_BASE, 't');
 				UARTCharPut(UART0_BASE, ' ');
+				UARTCharPut(UART0_BASE, '\n');
 				break;
 			}
 			// set the char to NULL to get new inputs
@@ -151,7 +152,6 @@ void UARTIntHandler(void)
 int main(void) {
 	
 		PortFunctionInit();
-	  SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
 		UART_int_init();
 
